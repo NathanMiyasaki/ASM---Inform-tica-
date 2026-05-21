@@ -306,6 +306,6 @@ https://github.com/NathanMiyasaki/ASM---Inform-tica-
 
 | Canal | Informação |
 |---|---|
-| WhatsApp | (11) 9-3448-6577 |
-| E-mail | vendas@infoasm.com |
+| WhatsApp |  |
+| E-mail |  |
 | Desenvolvedor | Nathan Miyasaki — nathan.miyasaki@anchieta.br |
