@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edição de serviço.">
+    <title>Editar serviços – Sistema A.S.M Informática</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="admin-page">
+    <header class="mb-4">
+        <site-header active="admin"></site-header>
+    </header>
+
+    <div class="container pb-5">
+        <main>
+            <section class="row justify-content-center">
+                <div class="col-xl-9">
+                    <div class="card shadow-sm border-0 p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h1 class="h3 mb-0">Editar serviço</h1>
+                            <a class="btn btn-outline-secondary" href="/admin/">Voltar</a>
+                        </div>
+
+                        <div id="errorAlert"></div>
+
+                        <form id="editForm">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="name">Nome do serviço</label>
+                                    <input class="form-control" id="name" name="name" type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="description">Descrição</label>
+                                    <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="image_url">URL da imagem</label>
+                                    <input class="form-control" id="image_url" name="image_url" type="url">
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="is_active" name="is_active" type="checkbox" value="1">
+                                        <label class="form-check-label" for="is_active">Serviço ativo na página inicial</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-2">
+                                    <button class="btn btn-primary" type="submit" id="submitBtn">Salvar alterações</button>
+                                    <a class="btn btn-outline-secondary" href="/admin/">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <site-footer></site-footer>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/assets/js/admin/edit.js"></script>
+</body>
+</html>

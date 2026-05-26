@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>A.S.M. Informática — Soluções em TI</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- ========== ETAPA 2: Canvas de fundo (rede) ========== -->
+    <canvas id="network-canvas" aria-hidden="true"></canvas>
+
+    <!-- ========== ETAPA 10: Aviso rotação mobile ========== -->
+    <div class="rotate-msg">
+        <p>Gire seu dispositivo para uma melhor experiência.</p>
+    </div>
+
+    <!-- ========== Conteúdo principal da página ========== -->
+    <div class="page-content">
+    <!-- ETAPA 3: Navegação -->
+    <nav class="nav">
+        <a href="#home" class="nav-logo-link" aria-label="A.S.M. Informática - Início">
+            <img class="nav-logo" src="favicon.png" alt="A.S.M. Informática" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="nav-logo-text">A.S.M.</span>
+        </a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </nav>
+
+    <!-- ETAPA 4: Hero -->
+    <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <h1>A.S.M.<br><span class="hero-accent">Informática</span></h1>
+            <p class="hero-tagline">Tecnologia que conecta sua empresa ao futuro</p>
+            <a href="#servicos" class="hero-cta">
+                Conheça nossos serviços
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ETAPA 5: Mensagem / Citação -->
+    <section class="message">
+        <blockquote>
+            Com <strong>organização</strong>, <strong>qualidade</strong> e <strong>desempenho</strong>. Parcerias inteligentes. A A.S.M. Informática garante o funcionamento de suas informações na velocidade que você precisa.
+        </blockquote>
+        <span class="signature">A.S.M. Informática</span>
+        <span class="caption">Sua empresa em alta performance</span>
+    </section>
+
+    <!-- ETAPA 6 + 7: Título Serviços e grid de cards -->
+    <section class="section-block" id="servicos">
+        <h2 class="section-title">Nossos <span class="accent">Serviços</span></h2>
+        <p class="section-desc">
+            <strong>Oferecemos</strong>,  soluções completas em <strong>hardware, infraestrutura de rede</strong>, loja física especializada e suporte técnico <strong>qualificado</strong>,
+            atendendo tanto empresas quanto consumidores finais com eficiência e confiabilidade.
+        </p>
+    </section>
+
+    <section class="services-wrap">
+        <h2 class="services-title">Serviços</h2>
+        <p class="services-subtitle">Aqui estão os serviços que oferecemos.</p>
+        <div id="products" class="services-grid" aria-live="polite"></div>
+        <div id="products" class="row g-4"></div>
+        <script type="module" src="/assets/js/index.js"></script>
+    </section>
+
+    <!-- ETAPA 8: Fale conosco (formulário melhorado) -->
+    <section class="cta-block" id="contato">
+        <div class="container">
+            <div class="card shadow-sm border-0 p-4 contact-card">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2>Fale conosco</h2>
+                        <p>Atendimento por telefone, WhatsApp e e-mail. Estamos prontos para ajudar.</p>
+                        <p><a href="https://wa.me/5511934486577" class="cta-email-link">WhatsApp (11) 9-3448-6577</a></p>
+                        <p class="cta-email-wrap"><a href="mailto:vendas@infoasm.com" class="cta-email-link">vendas@infoasm.com</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <form id="contactForm" novalidate>
+                            <div class="row g-2">
+                                <div class="col-12">
+                                    <label class="form-label" for="name">Nome</label>
+                                    <input class="form-control" id="name" name="name" type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="email">E-mail</label>
+                                    <input class="form-control" id="email" name="email" type="email">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="subject">Assunto</label>
+                                    <input class="form-control" id="subject" name="subject" type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="message">Mensagem</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                                </div>
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button class="btn btn-primary" id="submitBtn" type="submit">Enviar mensagem</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ETAPA 9: Rodapé -->
+    <footer class="footer">
+        <p class="footer-tagline">Sempre levando soluções.</p>
+        <a href="mailto:vendas@infoasm.com">Contato comercial</a>
+        <p class="footer-copy"><a href="https://wa.me/5511974484096">© 2026 Desenvolvido por Nathan Miyasaki.</a> </p>
+        <p class="footer-copyright">Todos os direitos reservados.</p>
+    </footer>
+    </div>
+
+    <!-- ========== ETAPA 11: Widget do Chatbot ========== -->
+    <div class="chat-widget" aria-label="Chat de atendimento">
+        <button type="button" class="chat-toggle" id="chatToggle" aria-label="Abrir chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <div class="chat-panel" id="chatPanel">
+            <div class="chat-header">
+                <div>
+                    <h3>A.S.M. Informática</h3>
+                    <p>Como podemos ajudar?</p>
+                </div>
+                <button type="button" class="chat-close" id="chatClose" aria-label="Fechar chat">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-quick-actions" id="chatQuickActions"></div>
+            <div class="chat-input-wrap">
+                <textarea class="chat-input" id="chatInput" placeholder="Digite sua mensagem..." rows="1"></textarea>
+                <button type="button" class="chat-send" id="chatSend" aria-label="Enviar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 22-7z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ========== ETAPA 1: Animação de rede (fundo) ========== */
+        (function() {
+            var canvas = document.getElementById('network-canvas');
+            var ctx = canvas.getContext('2d');
+            var nodes = [];
+            var nodeCount = 70;
+            var connectionDist = 140;
+            var dotRadius = 2;
+            var lineOpacity = 0.12;
+            var dotColor = 'rgba(0, 153, 212, 0.35)';
+            var lineColor = 'rgba(0, 153, 212, 0.2)';
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initNodes();
+            }
+
+            function initNodes() {
+                nodes = [];
+                for (var i = 0; i < nodeCount; i++) {
+                    nodes.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.4,
+                        vy: (Math.random() - 0.5) * 0.4
+                    });
+                }
+            }
+
+            function dist(a, b) {
+                return Math.hypot(a.x - b.x, a.y - b.y);
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (var i = 0; i < nodes.length; i++) {
+                    var n = nodes[i];
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+                    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+                    n.x = Math.max(0, Math.min(canvas.width, n.x));
+                    n.y = Math.max(0, Math.min(canvas.height, n.y));
+                }
+
+                for (var i = 0; i < nodes.length; i++) {
+                    for (var j = i + 1; j < nodes.length; j++) {
+                        var d = dist(nodes[i], nodes[j]);
+                        if (d < connectionDist) {
+                            var alpha = (1 - d / connectionDist) * lineOpacity;
+                            ctx.strokeStyle = 'rgba(0, 153, 212, ' + alpha + ')';
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                for (var i = 0; i < nodes.length; i++) {
+                    var n = nodes[i];
+                    ctx.fillStyle = dotColor;
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, dotRadius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            draw();
+        })();
+
+        /* ========== ETAPA 2: Chatbot ========== */
+        (function() {
+            /* Referências do DOM */
+            var panel = document.getElementById('chatPanel');
+            var toggle = document.getElementById('chatToggle');
+            var messagesEl = document.getElementById('chatMessages');
+            var inputEl = document.getElementById('chatInput');
+            var sendBtn = document.getElementById('chatSend');
+            var quickActionsEl = document.getElementById('chatQuickActions');
+
+            /* Opções rápidas e intenções */
+            var quickOptions = [
+                'Quais serviços vocês oferecem?',
+                'Preciso de computador ou notebook',
+                'Estrutura de rede',
+                'Consultoria',
+                'Falar com alguém / Contato'
+            ];
+
+            var intents = [
+                {
+                    keywords: ['serviço', 'serviços', 'o que fazem', 'o que oferecem', 'oferecem', 'fazem'],
+                    response: 'Oferecemos soluções em <strong>hardware</strong>, <strong>infraestrutura de rede</strong>, loja física, assistência técnica e <strong>consultoria</strong>. Posso detalhar algum?',
+                    action: { scroll: '#servicos' }
+                },
+                {
+                    keywords: ['computador', 'computadores', 'notebook', 'notebooks', 'pc', 'hardware'],
+                    response: 'Trabalhamos com computadores e notebooks para trabalho, engenharia, jogos, escritório e uso pessoal. Quer ver na página? Posso levar você à seção de serviços ou ao contato para orçamento.',
+                    action: { scroll: '#servicos' }
+                },
+                {
+                    keywords: ['rede', 'estrutura de rede', 'topologia', 'layout', 'cabeadamento'],
+                    response: 'Fazemos planejamento de topologia e layout estruturado de rede com ótimo custo-benefício. Para orçamento ou dúvidas, use o contato abaixo.',
+                    action: { scroll: '#servicos' }
+                },
+                {
+                    keywords: ['consultoria', 'consultor'],
+                    response: 'Atuamos em consultoria nas áreas de tecnologia, informática, engenharia e ciência. Veja mais na seção Consultoria ou fale conosco para combinar uma conversa.',
+                    action: { scroll: '#consultoria' }
+                },
+                {
+                    keywords: ['contato', 'falar', 'telefone', 'whatsapp', 'email', 'e-mail', 'orçamento', 'orcamento'],
+                    response: 'Para falar conosco:<br>• <strong>WhatsApp:</strong> <a href="https://wa.me/5511934486577" target="_blank" rel="noopener">(11) 9-3448-6577</a><br>• <strong>E-mail:</strong> <a href="mailto:vendas@infoasm.com">vendas@infoasm.com</a>',
+                    action: { scroll: '#contato' }
+                },
+                {
+                    keywords: ['assistência', 'assistencia', 'técnica', 'tecnica', 'loja', 'reparo'],
+                    response: 'Temos loja física e assistência técnica, atendendo empresas e consumidores. Entre em contato pelo WhatsApp ou e-mail para agendar ou tirar dúvidas.',
+                    action: { scroll: '#contato' }
+                },
+                {
+                    keywords: ['parceria', 'parceiro'],
+                    response: 'Trabalhamos em parceria estratégica com nossos clientes. Conte-nos sua necessidade pelo WhatsApp ou e-mail que retornamos em breve.',
+                    action: { scroll: '#contato' }
+                }
+            ];
+
+            var fallbackResponse = 'Não entendi exatamente. Você pode escolher uma opção rápida abaixo ou perguntar sobre: <strong>serviços</strong>, <strong>computadores/notebooks</strong>, <strong>rede</strong>, <strong>consultoria</strong> ou <strong>contato</strong>.';
+
+            var lastMessageFromQuickAction = false;
+
+            /* Funções auxiliares */
+            function nowStr() {
+                var d = new Date();
+                return d.getHours() + ':' + (d.getMinutes() < 10 ? '0' : '') + d.getMinutes();
+            }
+
+            function addMessage(text, isUser, isHtml) {
+                var div = document.createElement('div');
+                div.className = 'chat-msg ' + (isUser ? 'user' : 'bot');
+                var content = isHtml ? text : document.createTextNode(text);
+                if (isHtml) {
+                    var inner = document.createElement('span');
+                    inner.innerHTML = text;
+                    div.appendChild(inner);
+                } else {
+                    div.appendChild(content);
+                }
+                var time = document.createElement('div');
+                time.className = 'time';
+                time.textContent = nowStr();
+                div.appendChild(time);
+                messagesEl.appendChild(div);
+                messagesEl.scrollTop = messagesEl.scrollHeight;
+            }
+
+            function renderQuickActions() {
+                quickActionsEl.innerHTML = '';
+                quickOptions.forEach(function(label) {
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'chat-quick-btn';
+                    btn.textContent = label;
+                    btn.addEventListener('click', function() { sendAsUser(label, true); });
+                    quickActionsEl.appendChild(btn);
+                });
+            }
+
+            function detectIntent(text) {
+                var t = text.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                for (var i = 0; i < intents.length; i++) {
+                    var intent = intents[i];
+                    for (var k = 0; k < intent.keywords.length; k++) {
+                        var kw = intent.keywords[k].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                        if (t.indexOf(kw) !== -1) return intent;
+                    }
+                }
+                return null;
+            }
+
+            function reply(userText) {
+                var intent = detectIntent(userText);
+                var response = intent ? intent.response : fallbackResponse;
+                var action = intent && intent.action ? intent.action : null;
+                addMessage(response, false, true);
+                if (action && action.scroll) {
+                    var el = document.querySelector(action.scroll);
+                    if (el) setTimeout(function() { el.scrollIntoView({ behavior: 'smooth' }); }, 300);
+                }
+                if (!lastMessageFromQuickAction) renderQuickActions();
+                lastMessageFromQuickAction = false;
+            }
+
+            function sendAsUser(text, fromQuickAction) {
+                if (!text || !text.trim()) return;
+                lastMessageFromQuickAction = !!fromQuickAction;
+                if (fromQuickAction) quickActionsEl.innerHTML = '';
+                addMessage(text.trim(), true, false);
+                inputEl.value = '';
+                setTimeout(function() { reply(text); }, 500);
+            }
+
+            function sendMessage() {
+                var text = (inputEl.value || '').trim();
+                if (text) sendAsUser(text);
+            }
+
+            /* Eventos */
+            var closeBtn = document.getElementById('chatClose');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    panel.classList.remove('open');
+                });
+            }
+
+            toggle.addEventListener('click', function() {
+                panel.classList.toggle('open');
+                if (panel.classList.contains('open') && messagesEl.children.length === 0) {
+                    addMessage('Olá! Sou o assistente da A.S.M. Informática. Digite o que você procura ou escolha uma opção abaixo.', false, true);
+                    renderQuickActions();
+                }
+            });
+
+            sendBtn.addEventListener('click', sendMessage);
+            inputEl.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+
+            inputEl.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+            });
+        })();
+    </script>
+
+    <script type="module" src="/assets/js/contato.js"></script>
+
+    <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+    
+
+
+
+
+</body>
+</html>
